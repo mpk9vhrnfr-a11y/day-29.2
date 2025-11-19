@@ -1,15 +1,27 @@
-//
-//  main.c
-//  day 29.2
-//
-//  Created by Sanaa Kumar on 19/11/25.
-//
-
-#include <stdlib.h>
 #include <stdio.h>
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    printf("Hello, World!\n");
-    return EXIT_SUCCESS;
+int main(void) {
+    int arr[100], n, i, max, min;
+
+    printf("Enter number of elements: ");
+    scanf("%d", &n);
+
+    for(i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    max = arr[0];
+    min = arr[0];
+
+    for(i = 1; i < n; i++) {
+        if(arr[i] > max)
+            max = arr[i];
+        if(arr[i] < min)
+            min = arr[i];
+    }
+
+    printf("Maximum = %d\n", max);
+    printf("Minimum = %d\n", min);
+
+    return 0;
 }
